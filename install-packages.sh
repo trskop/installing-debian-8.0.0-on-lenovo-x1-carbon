@@ -14,11 +14,22 @@ declare -r -a install_packages=(
 
     # See function add_webupd8team_java_repository for details.
     'oracle-java7-installer'
+
+    # Requested tools
     'smb4k'
     'flashplugin-nonfree'
     'mplayer2'
     'wine'
     'yakuake'
+
+    # Everpad dependencies
+    #
+    # Based on: https://github.com/nvbn/everpad/wiki/how-to-install
+    'python-pyside.qtcore' 'python-pyside.qtgui' 'python-dbus'
+    'python-beautifulsoup' 'python-pysqlite2' 'python-keyring' 'python-support'
+    'python-sqlalchemy' 'python-oauth2' 'python-magic' 'python-pyside.qtwebkit'
+    'python-html2text' 'gtk2-engines-pixbuf' 'python-regex' 'python-setuptools'
+    'build-essential' 'cmake' 'qmake' 'libqt4-dev' 'python-dev'
 
     # Some commonly used utilities
     'curl'
