@@ -71,14 +71,32 @@ add_webupd8team_java_repository()
     fi
 }
 
+install_everpad()
+{
+    # Check if everpad is present, if yes, then short circuit.
+    hash everpad && return
+
+    printf "\nInstalling Everpad, this will take a while...\n\n"
+
+    wrap git clone https://github.com/nvbn/everpad.git
+    (
+        wrap cd everpad
+        sudo_wrap python setup.py install
+    )
+
+    printf "\nEverpad installed.\n"
+}
+
 main()
 {
     add_webupd8team_java_repository
 
     printf "\nInstalling packages...\n\n"
     wrap sleep 1
-
     sudo_wrap apt-get install "${install_packages[@]}"
+    printf "\nPackages installed.\n"
+
+    install_everpad
 }
 
 main "${0##*/}" "$@"
