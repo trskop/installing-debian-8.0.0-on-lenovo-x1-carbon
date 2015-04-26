@@ -27,9 +27,10 @@ declare -r -a install_packages=(
     # Based on: https://github.com/nvbn/everpad/wiki/how-to-install
     'python-pyside.qtcore' 'python-pyside.qtgui' 'python-dbus'
     'python-beautifulsoup' 'python-pysqlite2' 'python-keyring' 'python-support'
-    'python-sqlalchemy' 'python-oauth2' 'python-magic' 'python-pyside.qtwebkit'
-    'python-html2text' 'gtk2-engines-pixbuf' 'python-regex' 'python-setuptools'
-    'build-essential' 'cmake' 'qmake' 'libqt4-dev' 'python-dev'
+    'python-sqlalchemy' 'python-oauth2client' 'python-magic'
+    'python-pyside.qtwebkit' 'python-html2text' 'gtk2-engines-pixbuf'
+    'python-regex' 'python-setuptools' 'build-essential' 'cmake' 'qt4-qmake'
+    'libqt4-dev' 'python-dev'
 
     # Some commonly used utilities
     'curl'
