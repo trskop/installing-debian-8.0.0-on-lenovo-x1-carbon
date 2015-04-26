@@ -19,7 +19,6 @@ declare -r -a install_packages=(
     'mplayer2'
     'wine'
     'yakuake'
-    'everpad'
 
     # Some commonly used utilities
     'curl'
@@ -60,31 +59,9 @@ add_webupd8team_java_repository()
     fi
 }
 
-add_everpad_repository()
-{
-    local -r repo_url='http://ppa.launchpad.net/nvbn-rm/everpad-usc/ubuntu'
-    local -r sources_list='/etc/apt/sources.list.d/everpad-usc.list'
-    local -r key_server='hkp://keyserver.ubuntu.com:80'
-    local -r repo_key='01E7E3EDE399A2252D12CD719A29122E9C8631BA'
-
-    # See https://wiki.ubuntu.com/DevelopmentCodeNames for list of code names.
-    local -r ubuntu_code_name='quantal' # Latest available in this repository.
-
-    if [[ ! -e "$sources_list" ]]; then
-        printf "Creating \`%s' file with following content:\n\n" "$sources_list"
-        printf "deb %s %s main\ndeb-src %s %s main\n" \
-            "$repo_url" "$ubuntu_code_name" \
-            "$repo_url" "$ubuntu_code_name" \
-        | sudo_wrap tee "$sources_list" | sed 's/^/    /g'
-        sudo_wrap apt-key adv --keyserver "$key_server" --recv-keys "$repo_key"
-        sudo_wrap apt-get update
-    fi
-}
-
 main()
 {
     add_webupd8team_java_repository
-    add_everpad_repository
 
     printf "\nInstalling packages...\n\n"
     wrap sleep 1
