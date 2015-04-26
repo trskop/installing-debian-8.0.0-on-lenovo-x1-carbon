@@ -45,3 +45,10 @@ Don't forget to backup USB recovery disk as well. In my case it USB key had
     dd if=/dev/sdc of=/mnt/ext-hdd/lenovo-x1-carbon-usb-rescue-disk-32g.img
 
 Suffix "32g" of the target file name indicates, that USB key had size of 32GB.
+
+
+Oracle Java on Debian
+---------------------
+
+See <http://www.webupd8.org/2012/06/how-to-install-oracle-java-7-in-debian.html>
+and [`install-packages.sh`](install-packages.sh) script.
