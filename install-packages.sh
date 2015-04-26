@@ -84,6 +84,7 @@ add_everpad_repository()
 main()
 {
     add_webupd8team_java_repository
+    add_everpad_repository
 
     printf "\nInstalling packages...\n\n"
     wrap sleep 1
