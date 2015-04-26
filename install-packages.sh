@@ -16,6 +16,9 @@ declare -r -a install_packages=(
     'oracle-java7-installer'
     'smb4k'
     'flashplugin-nonfree'
+
+    # Some commonly used utilities
+    'curl'
 )
 
 wrap()
