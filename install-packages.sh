@@ -11,7 +11,7 @@ declare -r -a install_packages=(
     # See function add_webupd8team_java_repository for details.
     'oracle-java7-installer'
     'smb4k'
-    'flashplugin-installer'
+    'flashplugin-nonfree'
 )
 
 wrap()
