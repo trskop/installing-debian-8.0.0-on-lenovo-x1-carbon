@@ -8,6 +8,10 @@ declare -r wrap_cmd=()
 #declare -r wrap_cmd=(':')
 
 declare -r -a install_packages=(
+    # Managing /etc in Git.
+    'git' 'git-doc'
+    'etckeeper'
+
     # See function add_webupd8team_java_repository for details.
     'oracle-java7-installer'
     'smb4k'

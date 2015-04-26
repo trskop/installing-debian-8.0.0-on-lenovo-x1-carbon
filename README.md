@@ -52,3 +52,9 @@ Oracle Java on Debian
 
 See <http://www.webupd8.org/2012/06/how-to-install-oracle-java-7-in-debian.html>
 and [`install-packages.sh`](install-packages.sh) script.
+
+
+Etckeeper
+---------
+
+Directory `/etc` is stored in Git repository using `etckeeper` tool.
