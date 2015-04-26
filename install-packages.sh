@@ -17,7 +17,7 @@ declare -r -a install_packages=(
 wrap()
 {
     (( debug )) && echo "$@"
-    "${wrap_cmd}" "$@"
+    "${wrap_cmd[@]}" "$@"
 }
 
 sudo_wrap()
