@@ -101,6 +101,20 @@ one can find out, that only Google Chrome will be providing newer versions of
 Adobe Flash on Linux.
 
 
+SeaMonkey
+---------
+
+There is a project named [Ubuntuzilla: Mozilla Software Installer][], which
+provides:
+
+* Firefox
+* Thunderbird
+* SeaMonkey
+
+All the above applications are unmodified binary distributions from Mozilla
+Foundation.
+
+
 Chrome
 ------
 
@@ -132,3 +146,5 @@ Google Chrome package registers its own repository in:
   https://github.com/nvbn/everpad/wiki/how-to-install
 [Everpad: scripts/install\_dbus\_services.py]:
   https://github.com/nvbn/everpad/blob/develop/scripts/install_dbus_services.py
+[Ubuntuzilla: Mozilla Software Installer]:
+  http://sourceforge.net/p/ubuntuzilla/wiki/Main_Page/

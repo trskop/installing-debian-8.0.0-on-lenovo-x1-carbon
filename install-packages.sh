@@ -21,6 +21,7 @@ declare -r -a install_packages=(
     'mplayer2'
     'wine'
     'yakuake'
+    'seamonkey-mozilla-build'
 
     # Everpad dependencies
     #
@@ -52,23 +53,25 @@ sudo_wrap()
 # for details.
 add_webupd8team_java_repository()
 {
-    local -r repo_url='http://ppa.launchpad.net/webupd8team/java/ubuntu'
     local -r sources_list='/etc/apt/sources.list.d/webupd8team-java.list'
+
+    # Check if repository is already installed, if yes, then short circuit.
+    [[ -e "$sources_list" ]] && return
+
+    local -r repo_url='http://ppa.launchpad.net/webupd8team/java/ubuntu'
     local -r key_server='hkp://keyserver.ubuntu.com:80'
     local -r repo_key='7B2C3B0889BF5709A105D03AC2518248EEA14886'
 
     # See https://wiki.ubuntu.com/DevelopmentCodeNames for list of code names.
     local -r ubuntu_code_name='vivid'
 
-    if [[ ! -e "$sources_list" ]]; then
-        printf "Creating \`%s' file with following content:\n\n" "$sources_list"
-        printf "deb %s %s main\ndeb-src %s %s main\n" \
-            "$repo_url" "$ubuntu_code_name" \
-            "$repo_url" "$ubuntu_code_name" \
-        | sudo_wrap tee "$sources_list" | sed 's/^/    /g'
-        sudo_wrap apt-key adv --keyserver "$key_server" --recv-keys "$repo_key"
-        sudo_wrap apt-get update
-    fi
+    printf "Creating \`%s' file with following content:\n\n" "$sources_list"
+    printf "deb %s %s main\ndeb-src %s %s main\n" \
+        "$repo_url" "$ubuntu_code_name" \
+        "$repo_url" "$ubuntu_code_name" \
+    | sudo_wrap tee "$sources_list" | sed 's/^/    /g'
+    sudo_wrap apt-key adv --keyserver "$key_server" --recv-keys "$repo_key"
+    sudo_wrap apt-get update
 }
 
 install_everpad()
@@ -87,9 +90,29 @@ install_everpad()
     printf "\nEverpad installed.\n"
 }
 
+add_ubuntuzilla_repository()
+{
+    local -r sources_list='/etc/apt/sources.list.d/ubuntuzilla.list'
+
+    # Check if repository is already installed, if yes, then short circuit.
+    [[ -e "$sources_list" ]] && return
+
+    local -r repo_url='http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt'
+    local -r key_server='hkp://keyserver.ubuntu.com:80'
+    local -r repo_key='C1289A29'
+    local -r suite='all'
+
+    printf "Creating \`%s' file with following content:\n\n" "$sources_list"
+    printf "deb %s %s main\n" "$repo_url" "$suite" \
+    | sudo_wrap tee "$sources_list" | sed 's/^/    /g'
+    sudo_wrap apt-key adv --keyserver "$key_server" --recv-keys "$repo_key"
+    sudo_wrap apt-get update
+}
+
 main()
 {
     add_webupd8team_java_repository
+    add_ubuntuzilla_repository
 
     printf "\nInstalling packages...\n\n"
     wrap sleep 1
