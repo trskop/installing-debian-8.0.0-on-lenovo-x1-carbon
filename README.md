@@ -57,4 +57,9 @@ and [`install-packages.sh`](install-packages.sh) script.
 Etckeeper
 ---------
 
-Directory `/etc` is stored in Git repository using `etckeeper` tool.
+Directory `/etc` is stored in Git repository using [`etckeeper`][etckeeper]
+tool.
+
+
+
+[etckeeper]: https://joeyh.name/code/etckeeper/
