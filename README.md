@@ -61,5 +61,12 @@ Directory `/etc` is stored in Git repository using [`etckeeper`][etckeeper]
 tool.
 
 
+Everpad
+-------
+
+There is [PPA repository providing everpad][Everpad PPA], last Ubuntu version
+it supports is *Utopic Unicorn* (14.10).
+
 
 [etckeeper]: https://joeyh.name/code/etckeeper/
+[Everpad PPA]: https://launchpad.net/~nvbn-rm/+archive/ubuntu/ppa
