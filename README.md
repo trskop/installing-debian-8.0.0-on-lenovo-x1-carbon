@@ -65,8 +65,34 @@ Everpad
 -------
 
 There is [PPA repository providing everpad][Everpad PPA], last Ubuntu version
-it supports is *Utopic Unicorn* (14.10).
+it supports is *Utopic Unicorn* (14.10). This causes problems with unresolvable
+packages.
+
+Trying to use Everpad directly from [repository][Everpad repository] on Debian
+Jessie required to install different list of dependencies then listed on [how
+to install page][Everpad: How to install]:
+
+* `python-oauth2 --> python-oauth2client`
+* `qmake --> qt4-qmake`
+
+This also required small code change, import of oauth2 had to be changed to
+import of oauth2client library.
+
+Another issue is that DBus `.service` files have to be installed manually or by
+adjusting [`scripts/install_dbus_services.py`
+][Everpad: scripts/install\_dbus\_services.py] to use `/usr/local` as
+installation prefix.
+
+Now it timeouts on DBus calls to `com.everpad.App` api.
 
 
-[etckeeper]: https://joeyh.name/code/etckeeper/
-[Everpad PPA]: https://launchpad.net/~nvbn-rm/+archive/ubuntu/ppa
+[etckeeper]:
+  https://joeyh.name/code/etckeeper/
+[Everpad PPA]:
+  https://launchpad.net/~nvbn-rm/+archive/ubuntu/ppa
+[Everpad repository]:
+  https://github.com/nvbn/everpad
+[Everpad: How to install]:
+  https://github.com/nvbn/everpad/wiki/how-to-install
+[Everpad: scripts/install\_dbus\_services.py]:
+  https://github.com/nvbn/everpad/blob/develop/scripts/install_dbus_services.py
