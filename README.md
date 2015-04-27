@@ -86,6 +86,26 @@ installation prefix.
 Now it timeouts on DBus calls to `com.everpad.App` api.
 
 
+Flash Player
+------------
+
+[Adobe Flash Player download page][] says:
+
+> NOTE: Adobe Flash Player 11.2 will be the last version to target Linux as a
+> supported platform. Adobe will continue to provide security backports to
+> Flash Player 11.2 for Linux.
+
+On [Adobe AIR and Adobe Flash Player Team Blog: Adobe and Google Partnering for
+Flash Player on Linux][Adobe and Google Partnering for Flash Player on Linux]
+one can find out, that only Google Chrome will be providing newer versions of
+Adobe Flash on Linux.
+
+
+
+[Adobe Flash Player download page]:
+  https://get.adobe.com/flashplayer/
+[Adobe and Google Partnering for Flash Player on Linux]:
+  https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html
 [etckeeper]:
   https://joeyh.name/code/etckeeper/
 [Everpad PPA]:
