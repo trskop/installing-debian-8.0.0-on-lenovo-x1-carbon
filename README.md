@@ -101,11 +101,27 @@ one can find out, that only Google Chrome will be providing newer versions of
 Adobe Flash on Linux.
 
 
+Chrome
+------
+
+Just download Chrome Debian package from its [download page
+][Chrome download page], then install it using:
+
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
+    sudo apt-get install --fix-broken   # Install Google Chrome dependencies
+
+Google Chrome package registers its own repository in:
+
+    /etc/apt/sources.list.d/google-chrome.list
+
+
 
 [Adobe Flash Player download page]:
   https://get.adobe.com/flashplayer/
 [Adobe and Google Partnering for Flash Player on Linux]:
   https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html
+[Chrome download page]:
+  https://www.google.com/chrome/browser/desktop/
 [etckeeper]:
   https://joeyh.name/code/etckeeper/
 [Everpad PPA]:
