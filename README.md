@@ -114,6 +114,8 @@ provides:
 All the above applications are unmodified binary distributions from Mozilla
 Foundation.
 
+Purge `iceweasel` and possibly also `icedove` packages.
+
 Changing Firefox locale to Czech is done by installing language pack addon and
 then in <about:config> change value of `general.useragent.locale` to `cs-CZ`
 and restart Firefox.
