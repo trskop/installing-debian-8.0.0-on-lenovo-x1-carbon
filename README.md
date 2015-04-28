@@ -140,6 +140,13 @@ Google Chrome package registers its own repository in:
     /etc/apt/sources.list.d/google-chrome.list
 
 
+Bluetooth
+---------
+
+KDE Bluetooth integration, named BlueDevil, is not installed by default. Simple
+`apt-get install bluedevil` will do. See also
+[`install-packages.sh`](install-packages.sh).
+
 
 [Adobe Flash Player download page]:
   https://get.adobe.com/flashplayer/
