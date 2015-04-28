@@ -29,6 +29,7 @@ declare -r -a install_packages=(
     'seamonkey-mozilla-build'
     'thunderbird-mozilla-build'
     'firefox-mozilla-build'
+    'bluedevil' # KDE Bluetooth integration.
 
     # Everpad dependencies
     #
