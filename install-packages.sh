@@ -7,6 +7,11 @@ declare -i -r debug=0
 declare -r wrap_cmd=()
 #declare -r wrap_cmd=(':')
 
+declare -r -a purge_packages=(
+    'iceweasel'
+    'icedove'
+)
+
 declare -r -a install_packages=(
     # Managing /etc in Git.
     'git' 'git-doc'
@@ -22,6 +27,8 @@ declare -r -a install_packages=(
     'wine'
     'yakuake'
     'seamonkey-mozilla-build'
+    'thunderbird-mozilla-build'
+    'firefox-mozilla-build'
 
     # Everpad dependencies
     #
@@ -113,6 +120,11 @@ main()
 {
     add_webupd8team_java_repository
     add_ubuntuzilla_repository
+
+    printf "\nPurge packages...\n\n"
+    wrap sleep 1
+    sudo_wrap apt-get purge "${purge_packages[@]}"
+    printf "\nPackages purged.\n"
 
     printf "\nInstalling packages...\n\n"
     wrap sleep 1
