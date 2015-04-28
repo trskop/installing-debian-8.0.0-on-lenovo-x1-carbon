@@ -101,8 +101,8 @@ one can find out, that only Google Chrome will be providing newer versions of
 Adobe Flash on Linux.
 
 
-SeaMonkey
----------
+Firefox, Thunderbird, SeaMonkey
+-------------------------------
 
 There is a project named [Ubuntuzilla: Mozilla Software Installer][], which
 provides:
@@ -113,6 +113,15 @@ provides:
 
 All the above applications are unmodified binary distributions from Mozilla
 Foundation.
+
+Changing Firefox locale to Czech is done by installing language pack addon and
+then in <about:config> change value of `general.useragent.locale` to `cs-CZ`
+and restart Firefox.
+
+To change Thunderbird locale to Czech, go to
+<https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/>, find version
+you are using and inside than go to directory `linux-x86_64/xpi/` and follow
+instructions in <http://kb.mozillazine.org/Extensions_%28Thunderbird%29>.
 
 
 Chrome
