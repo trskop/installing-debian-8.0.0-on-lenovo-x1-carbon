@@ -23,13 +23,13 @@ Script [`mk-usb.sh`](mk-usb.sh) describes how this issue was solved.
 Disk Partitioning
 -----------------
 
-Disk already uses all four primary partitions. Disk still uses old DOS-style
-partition table, therefore that is maximum number of primary partitions
-allowed.
+Disk already uses all four primary partitions. Also, it still uses old
+DOS-style partition table, therefore that is maximum number of primary
+partitions allowed.
 
-To acquire at leas one primary partition, under which logical partitions can be
-created, one has to delete at least one of those existing partitions. After
-some thinking it was decided to delete recovery partition. Before doing so, USB
+To acquire  primary partition, under which logical partitions can be created,
+at least one of those existing partitions has to be deleted. After some
+thinking it was decided to delete recovery partition. Before doing so, USB
 recovery partition was created using Lenovo recovery tools. Old recovery
 partition was also backed up by simply dd-ing it in to image file on external
 USB drive.
@@ -39,7 +39,7 @@ USB drive.
 That "q" in the name of the image file indicated drive letter assigned to it
 under Windows.
 
-Don't forget to backup USB recovery disk as well. In my case it USB key had
+Don't forget to backup USB recovery disk as well. In my case, USB key had
 `/dev/sdc` device assigned to it:
 
     dd if=/dev/sdc of=/mnt/ext-hdd/lenovo-x1-carbon-usb-rescue-disk-32g.img
