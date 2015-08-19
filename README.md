@@ -153,6 +153,29 @@ KDE Bluetooth integration, named BlueDevil, is not installed by default. Simple
 [`install-packages.sh`](install-packages.sh).
 
 
+SSD Trim
+--------
+
+Querying disk if it supports trim:
+
+    $ sudo hdparm -I /dev/sda | grep -i trim
+           *    Data Set Management TRIM supported (limit 8 blocks)
+
+Enabling periodic `fstrim` using systemd timer:
+
+    $ sudo cp /usr/share/doc/util-linux/examples/fstrim.{service,timer} /usr/lib/systemd/system/
+    $ sudo systemctl daemon-reload
+    $ sudo systemctl enable fstrim.timer
+
+References:
+
+* <https://wiki.archlinux.org/index.php/Solid_State_Drives#Verify_TRIM_Support>
+* <https://wiki.archlinux.org/index.php/Solid_State_Drives#Apply_periodic_TRIM_via_fstrim>
+* <https://wiki.archlinux.org/index.php/systemd#Editing_provided_unit_files>
+* <https://wiki.archlinux.org/index.php/Systemd/Timers>
+
+
+
 [Adobe Flash Player download page]:
   https://get.adobe.com/flashplayer/
 [Adobe and Google Partnering for Flash Player on Linux]:
