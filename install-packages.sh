@@ -44,6 +44,9 @@ declare -r -a install_packages=(
     # Some commonly used utilities
     'curl'
     'vlc'
+
+    # Used to query SSD disk capabilities.
+    'hdparm'
 )
 
 wrap()
