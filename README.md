@@ -125,6 +125,11 @@ To change Thunderbird locale to Czech, go to
 you are using and inside than go to directory `linux-x86_64/xpi/` and follow
 instructions in <http://kb.mozillazine.org/Extensions_%28Thunderbird%29>.
 
+To set DPI higher, so that it these applications are usable on high resolution
+displays, set `layout.css.devPixelsPerPx` to either `2` or `1.5`. References:
+<https://askubuntu.com/questions/487032/adjust-firefox-and-thunderbird-to-a-high-dpi-touchscreen-display-retina>
+<http://fedoramagazine.org/how-to-get-firefox-looking-right-on-a-high-dpi-display-and-fedora/>
+
 
 Chrome
 ------
