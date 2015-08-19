@@ -166,6 +166,7 @@ Enabling periodic `fstrim` using systemd timer:
     $ sudo cp /usr/share/doc/util-linux/examples/fstrim.{service,timer} /usr/lib/systemd/system/
     $ sudo systemctl daemon-reload
     $ sudo systemctl enable fstrim.timer
+    $ sudo systemctl start fstrim.timer
 
 References:
 
